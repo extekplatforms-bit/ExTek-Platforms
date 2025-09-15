@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ExTek Platforms</title>
+
+  <meta name="description" content="ExTek Platforms — Conectando compradores e vendedores de veículos em Angola com segurança e confiança." />
+  <link rel="icon" href="img/favicon.jpg" type="image/jpeg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dark-mode">
+
+  <!-- MENU MÓVEL -->
+  <button id="menu-toggle" aria-label="Abrir menu">☰</button>
+
+  <nav id="menu" class="oculto" aria-label="Navegação principal">
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#veiculos">Veículos</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><a href="#vender">Vender Carro</a></li>
+    </ul>
+  </nav>
+
+  <!-- BOTÃO MODO -->
+  <button class="btn toggle-theme" aria-label="Alternar tema">🌙 Modo Escuro</button>
+
+  <!-- CABEÇALHO / HERO -->
+  <header class="hero">
+    <div class="hero-wrap">
+      <img src="img/logo.png" alt="Logotipo ExTek Platforms" class="logo" />
+      <h1>ExTek Platforms</h1>
+      <p class="slogan">Conectando compradores e vendedores de carros com segurança e confiança.</p>
+
+      <div class="botoes-principais">
+        <button class="btn-acao" id="btn-procurar">🔍 Procurar Veículos</button>
+        <button class="btn-acao" id="btn-vender">💰 Quero Vender Meu Carro</button>
+        <button class="btn-acao" id="btn-whatsapp">📱 Falar no WhatsApp</button>
+      </div>
+    </div>
+
+    <!-- Efeito parallax simples (background via CSS) -->
+    <div class="hero-decor"></div>
+  </header>
+
+  <!-- CARROSSEL -->
+  <section class="carrossel visivel" aria-label="Destaques">
+    <div class="slider">
+      <img src="img/banners/destaque1.jpg" alt="Destaque 1" class="slide ativo" loading="lazy" />
+      <img src="img/banners/destaque2.jpg" alt="Destaque 2" class="slide" loading="lazy" />
+      <img src="img/banners/destaque3.jpg" alt="Destaque 3" class="slide" loading="lazy" />
+    </div>
+    <div class="controles">
+      <button id="anterior" aria-label="Slide anterior">⟨</button>
+      <div class="dots" id="dots"></div>
+      <button id="proximo" aria-label="Próximo slide">⟩</button>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="container">
+
+    <section id="sobre" class="visivel">
+      <h2>Quem Somos</h2>
+      <p>A ExTek é uma plataforma inovadora que facilita a compra e venda de veículos em Angola. Garantimos transparência, rapidez e confiança em todas as transações.</p>
+    </section>
+
+    <section id="servicos" class="visivel">
+      <h2>O Que Fazemos</h2>
+      <ul>
+        <li>🔒 Segurança em todas as transações</li>
+        <li>🙏 Conexão direta entre compradores e vendedores</li>
+        <li>🕙 Processo rápido e simplificado</li>
+        <li>🚸 Suporte e acompanhamento profissional</li>
+      </ul>
+    </section>
+
+    <!-- FORMULÁRIO DE VENDA (oculto por padrão) -->
+    <section id="vender" class="formulario-venda oculto" aria-hidden="true">
+      <h2>Cadastrar Meu Veículo para Venda</h2>
+      <form id="form-venda" class="form-estilizado">
+        <!-- Campos igual ao teu HTML original -->
+        <div class="form-grupo">
+          <label for="nome-proprietario">Nome Completo *</label>
+          <input type="text" id="nome-proprietario" name="nome" required>
+        </div>
+        <div class="form-grupo">
+          <label for="telefone-proprietario">Telefone/WhatsApp *</label>
+          <input type="tel" id="telefone-proprietario" name="telefone" placeholder="+244" required>
+        </div>
+        <div class="form-grupo">
+          <label for="marca-veiculo">Marca do Veículo *</label>
+          <input type="text" id="marca-veiculo" name="marca" placeholder="Ex: Toyota, Honda, Nissan" required>
+        </div>
+        <div class="form-grupo">
+          <label for="modelo-veiculo">Modelo do Veículo *</label>
+          <input type="text" id="modelo-veiculo" name="modelo" placeholder="Ex: Corolla, Civic, Altima" required>
+        </div>
+        <div class="form-grupo">
+          <label for="ano-veiculo">Ano de Fabrico *</label>
+          <input type="number" id="ano-veiculo" name="ano" min="1980" max="2025" required>
+        </div>
+        <div class="form-grupo">
+          <label for="preco-veiculo">Preço (Kz) *</label>
+          <input type="number" id="preco-veiculo" name="preco" placeholder="Ex: 5000000" required>
+        </div>
+        <div class="form-grupo">
+          <label for="combustivel-veiculo">Combustível *</label>
+          <select id="combustivel-veiculo" name="combustivel" required>
+            <option value="">Selecione</option>
+            <option value="gasolina">Gasolina</option>
+            <option value="diesel">Diesel</option>
+            <option value="electrico">Elétrico</option>
+            <option value="hibrido">Híbrido</option>
+          </select>
+        </div>
+        <div class="form-grupo">
+          <label for="transmissao-veiculo">Transmissão *</label>
+          <select id="transmissao-veiculo" name="transmissao" required>
+            <option value="">Selecione</option>
+            <option value="manual">Manual</option>
+            <option value="automatico">Automático</option>
+          </select>
+        </div>
+        <div class="form-grupo">
+          <label for="quilometragem-veiculo">Quilometragem (km)</label>
+          <input type="number" id="quilometragem-veiculo" name="quilometragem" placeholder="Ex: 50000">
+        </div>
+        <div class="form-grupo">
+          <label for="localizacao-veiculo">Localização *</label>
+          <input type="text" id="localizacao-veiculo" name="localizacao" placeholder="Ex: Luanda, Cabinda" required>
+        </div>
+        <div class="form-grupo">
+          <label for="descricao-veiculo">Descrição/Estado do Veículo</label>
+          <textarea id="descricao-veiculo" name="descricao" rows="4" placeholder="Descreva o estado do veículo, extras, etc."></textarea>
+        </div>
+        <div class="form-botoes">
+          <button type="submit" class="btn-enviar">📤 Enviar Dados via WhatsApp</button>
+          <button type="button" class="btn-cancelar" id="btn-cancelar-venda">❌ Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="filtro-veiculos visivel">
+      <input type="text" id="buscaModelo" placeholder="🔍 Buscar por modelo..." />
+      <select id="filtroCombustivel">
+        <option value="">Todos os combustíveis</option>
+        <option value="gasolina">Gasolina</option>
+        <option value="diesel">Diesel</option>
+        <option value="eléctrico">Elétrico</option>
+      </select>
+      <select id="filtroTransmissao">
+        <option value="">Todas as transmissões</option>
+        <option value="automático">Automático</option>
+        <option value="manual">Manual</option>
+      </select>
+    </section>
+
+    <!-- CARDS DE VEÍCULOS
+         **Os dois catálogos pedidos foram preservados exatamente como estavam** -->
+    <section id="veiculos" class="carros visivel" aria-label="Catálogo de veículos">
+      <!-- ========== CARD 1 (mantido) ========== -->
+      <div class="card-carro" data-modelo="HONDA" data-combustivel="gasolina" data-transmissao="automático">
+        <img src="img/carros/carro1.jpg" alt="HONDA" loading="lazy" />
+        <div class="info">
+          <h3>HONDA</h3>
+          <p><strong>Ano de Fabrico:</strong> —</p>
+          <p><strong>Combustível:</strong> Gasolina</p>
+          <p><strong>Quilometragem:</strong> 64.575 km</p>
+          <p><strong>Estado:</strong> Motor novo, pintura verde</p>
+          <p><strong>Localização:</strong> Condomínio da Amercon, Cabassango</p>
+          <p><strong>Documentação:</strong> Sim</p>
+          <p class="preco">Kz 7.600.000</p>
+          <p><strong>Proprietário:</strong> Francisco Muabi Simão</p>
+          <p><strong>Contato:</strong> +244 975 956 274</p>
+          <div class="acoes-veiculo">
+            <button class="btn-interesse" onclick="demonstrarInteresse('HONDA', '7.600.000', '244975956274')">💬 Tenho Interesse</button>
+            <button class="btn-compartilhar" onclick="compartilharVeiculo('HONDA', 'Kz 7.600.000')">📤 Compartilhar</button>
+            <button class="btn-preview" onclick="abrirPreview(this)">🔎 Visualizar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== CARD 2 (mantido) ========== -->
+      <div class="card-carro" data-modelo="Nissan Titan" data-combustivel="gasolina" data-transmissao="automático">
+        <img src="img/carros/carro2.jpg" alt="Nissan Titan V8" loading="lazy" />
+        <div class="info">
+          <h3>Nissan Titan V8 5.6L</h3>
+          <p><strong>Ano de Fabrico:</strong> 2009</p>
+          <p><strong>Combustível:</strong> Gasolina</p>
+          <p><strong>Transmissão:</strong> Automática</p>
+          <p><strong>Quilometragem:</strong> 158.761 km</p>
+          <p><strong>Cor:</strong> Azul escuro</p>
+          <p><strong>Lugares:</strong> 5</p>
+          <p><strong>Localização:</strong> Cabinda, Cabassango</p>
+          <p><strong>Documentação:</strong> Todos em dia</p>
+          <p class="preco">Kz 24.000.000</p>
+          <p><strong>Extras:</strong> Tração 4x4, ar condicionado, bancos em pele, som premium, jantes 20", sensores, vidros elétricos</p>
+          <p><strong>Descrição:</strong> Importado dos EUA, excelente estado mecânico e estético. Ideal para trabalho ou lazer.</p>
+          <p><strong>Contato:</strong> +244 975 956 274</p>
+          <div class="acoes-veiculo">
+            <button class="btn-interesse" onclick="demonstrarInteresse('Nissan Titan V8', '24.000.000', '244975956274')">💬 Tenho Interesse</button>
+            <button class="btn-compartilhar" onclick="compartilharVeiculo('Nissan Titan V8', 'Kz 24.000.000')">📤 Compartilhar</button>
+            <button class="btn-preview" onclick="abrirPreview(this)">🔎 Visualizar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="visivel">
+      <h2>Contato</h2>
+      <p>Fala connosco pelas nossas redes sociais:</p>
+
+      <!-- ícones responsivos e dimensionados -->
+      <div class="contato-redes" aria-hidden="false">
+        <a href="https://wa.me/244975956274" target="_blank" aria-label="WhatsApp">
+          <img src="img/whatsapp.png" alt="WhatsApp" />
+        </a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+          <img src="img/instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+          <img src="img/fb.png" alt="Facebook" />
+        </a>
+        <a href="https://www.tiktok.com/@extekplatforms" target="_blank" aria-label="TikTok">
+          <img src="img/tiktok.png" alt="TikTok" />
+        </a>
+        <a href="https://twitter.com/extekplatforms" target="_blank" aria-label="Twitter">
+          <img src="img/twitter.png" alt="Twitter" />
+        </a>
+        <a href="https://www.youtube.com/@extekplatforms" target="_blank" aria-label="YouTube">
+          <img src="img/youtube.png" alt="YouTube" />
+        </a>
+        <a href="https://www.linkedin.com/company/extekplatforms" target="_blank" aria-label="LinkedIn">
+          <img src="img/linkedin.png" alt="LinkedIn" />
+        </a>
+      </div>
+
+      <div class="formulario-contato">
+        <h3>Ou envie-nos uma mensagem:</h3>
+        <form id="form-contato" class="form-estilizado">
+          <div class="form-grupo">
+            <label for="nome-contato">Nome *</label>
+            <input type="text" id="nome-contato" name="nome" required>
+          </div>
+          <div class="form-grupo">
+            <label for="email-contato">Email</label>
+            <input type="email" id="email-contato" name="email">
+          </div>
+          <div class="form-grupo">
+            <label for="telefone-contato">Telefone *</label>
+            <input type="tel" id="telefone-contato" name="telefone" required>
+          </div>
+          <div class="form-grupo">
+            <label for="assunto-contato">Assunto *</label>
+            <select id="assunto-contato" name="assunto" required>
+              <option value="">Selecione um assunto</option>
+              <option value="comprar">Quero comprar um veículo</option>
+              <option value="vender">Quero vender meu veículo</option>
+              <option value="intermediacao">Preciso de intermediação</option>
+              <option value="suporte">Suporte técnico</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-grupo">
+            <label for="mensagem-contato">Mensagem *</label>
+            <textarea id="mensagem-contato" name="mensagem" rows="4" placeholder="Digite sua mensagem..." required></textarea>
+          </div>
+          <button type="submit" class="btn-enviar">📤 Enviar via WhatsApp</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p>© 2025 ExTek Platforms — Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- PREVIEW MODAL -->
+  <div id="previewModal" class="modal oculto" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Fechar">✕</button>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
